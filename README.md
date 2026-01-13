@@ -1,9 +1,11 @@
-# {{PRODUCT_NAME}}
+# Electron Boilerplate
 
-> {{PROJECT_DESCRIPTION}}
+> 범용 Electron 보일러플레이트 - Windows 데스크톱 애플리케이션을 빠르게 시작할 수 있는 템플릿
 
-**범용 Electron 보일러플레이트**
-Windows 데스크톱 애플리케이션을 빠르게 시작할 수 있는 템플릿입니다.
+[![GitHub](https://img.shields.io/badge/GitHub-Template-blue?logo=github)](https://github.com/gandol2/electron-boilerplate)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**🚀 [Use this template](https://github.com/gandol2/electron-boilerplate/generate)** 버튼을 클릭하여 바로 시작하세요!
 
 ---
 
@@ -34,15 +36,38 @@ Windows 데스크톱 애플리케이션을 빠르게 시작할 수 있는 템플
 
 ## 빠른 시작
 
-### 1. 저장소 복사
+### 방법 1: GitHub에서 생성 (권장) ⭐
+
+1. **이 저장소 페이지 상단의 "Use this template" 버튼 클릭**
+2. 새 저장소 이름 입력 (예: `my-electron-app`)
+3. "Create repository" 클릭
+4. 생성된 저장소를 클론:
 
 ```bash
-# 이 보일러플레이트를 복사하여 새 프로젝트 생성
-cp -r electron-boilerplate my-new-project
-cd my-new-project
+git clone https://github.com/yourusername/my-electron-app.git
+cd my-electron-app
 ```
 
-### 2. 프로젝트 초기화
+### 방법 2: gh CLI 사용
+
+```bash
+# GitHub CLI로 템플릿에서 새 저장소 생성
+gh repo create my-electron-app --template gandol2/electron-boilerplate --public --clone
+cd my-electron-app
+```
+
+### 방법 3: degit 사용 (Git 히스토리 없이)
+
+```bash
+# degit으로 최신 코드만 복사
+npx degit gandol2/electron-boilerplate my-electron-app
+cd my-electron-app
+git init
+```
+
+---
+
+### 프로젝트 초기화
 
 ```bash
 # 대화형 초기화 스크립트 실행
