@@ -1,0 +1,409 @@
+@import 'tailwindcss';
+
+/* ============================================ */
+/* Tailwind v4 다크 모드 설정                   */
+/* ============================================ */
+@variant dark (&:where(.dark, .dark *));
+
+/* ============================================ */
+/* 기존 shadcn/ui 색상 (주석 처리)              */
+/* ============================================ */
+/* :root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 3.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 3.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 3.9%);
+  --primary: hsl(240 5.9% 10%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(240 4.8% 95.9%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+  --accent: hsl(240 4.8% 95.9%);
+  --accent-foreground: hsl(240 5.9% 10%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --ring: hsl(240 5.9% 10%);
+  --chart-1: hsl(12 76% 61%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  --radius: 0.5rem;
+} */
+
+/* .dark {
+  --background: hsl(240 10% 3.9%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(240 10% 3.9%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(240 10% 3.9%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(0 0% 98%);
+  --primary-foreground: hsl(240 5.9% 10%);
+  --secondary: hsl(240 3.7% 15.9%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(240 3.7% 15.9%);
+  --muted-foreground: hsl(240 5% 64.9%);
+  --accent: hsl(240 3.7% 15.9%);
+  --accent-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(240 3.7% 15.9%);
+  --input: hsl(240 3.7% 15.9%);
+  --ring: hsl(240 4.9% 83.9%);
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+} */
+
+/* ============================================ */
+/* 라이트 모드 (이미지 참고)                    */
+/* ============================================ */
+:root {
+  /* Colors - Light Mode */
+  --background: hsl(0 0% 96%); /* 연한 회색 배경 (#f5f5f5) */
+  --foreground: hsl(0 0% 9%); /* 거의 검정 텍스트 (#171717) */
+  --card: hsl(0 0% 100%); /* 순백색 카드 */
+  --card-foreground: hsl(0 0% 9%); /* 거의 검정 카드 텍스트 */
+  --popover: hsl(0 0% 100%); /* 순백색 팝오버 */
+  --popover-foreground: hsl(0 0% 9%); /* 거의 검정 팝오버 텍스트 */
+  --primary: hsl(0 0% 9%); /* 거의 검정 (툴팁 배경) */
+  --primary-foreground: hsl(0 0% 100%); /* 순백색 (툴팁 텍스트) */
+  --secondary: hsl(0 0% 94%); /* 연한 회색 (#f0f0f0) */
+  --secondary-foreground: hsl(0 0% 9%); /* 거의 검정 */
+  --muted: hsl(0 0% 94%); /* 연한 회색 */
+  --muted-foreground: hsl(0 0% 50%); /* 중간 회색 (#808080) */
+  --accent: #5056dc; /* 브랜드 프라이머리 (인디고) */
+  --accent-foreground: hsl(0 0% 100%); /* 순백색 */
+  --destructive: hsl(0 84% 60%); /* 빨강 (#f44336) */
+  --destructive-foreground: hsl(0 0% 100%); /* 순백색 */
+  --border: hsl(0 0% 89%); /* 연한 회색 테두리 (#e3e3e3) */
+  --input: hsl(0 0% 89%); /* 연한 회색 입력 */
+  --ring: #5056dc; /* 브랜드 프라이머리 링 (인디고) */
+
+  /* Charts */
+  --chart-1: hsl(211 100% 50%); /* 블루 */
+  --chart-2: hsl(151 85% 40%); /* 그린 */
+  --chart-3: hsl(48 100% 50%); /* 옐로우 */
+  --chart-4: hsl(28 100% 50%); /* 오렌지 */
+  --chart-5: hsl(0 84% 60%); /* 레드 */
+
+  /* Border Radius */
+  --radius: 0.75rem; /* 둥근 모서리 */
+}
+
+/* ============================================ */
+/* 다크 모드 (이미지 참고)                      */
+/* ============================================ */
+.dark {
+  /* Colors - Dark Mode (이미지 기반) */
+  --background: hsl(217 33% 7%); /* 매우 어두운 네이비 배경 (#0c1015) */
+  --foreground: hsl(0 0% 95%); /* 밝은 회색 텍스트 (#f2f2f2) */
+  --card: hsl(217 25% 14%); /* 다크 네이비 카드 (#1e252e) */
+  --card-foreground: hsl(0 0% 95%); /* 밝은 회색 카드 텍스트 */
+  --popover: hsl(217 25% 14%); /* 다크 네이비 팝오버 */
+  --popover-foreground: hsl(0 0% 95%); /* 밝은 회색 팝오버 텍스트 */
+  --primary: hsl(0 0% 100%); /* 순백색 (툴팁 배경) */
+  --primary-foreground: hsl(217 33% 7%); /* 어두운 네이비 (툴팁 텍스트) */
+  --secondary: hsl(217 22% 18%); /* 중간 다크 네이비 (#262d38) */
+  --secondary-foreground: hsl(0 0% 95%); /* 밝은 회색 */
+  --muted: hsl(217 22% 18%); /* 중간 다크 네이비 */
+  --muted-foreground: hsl(0 0% 63%); /* 중간 회색 (#a0a0a0) */
+  --accent: #6366f1; /* 밝은 인디고 (다크 모드용) */
+  --accent-foreground: hsl(0 0% 100%); /* 순백색 */
+  --destructive: hsl(0 84% 65%); /* 밝은 빨강 (#f55a4e) */
+  --destructive-foreground: hsl(0 0% 100%); /* 순백색 */
+  --border: hsl(217 20% 22%); /* 미묘한 테두리 (#2e3740) */
+  --input: hsl(217 20% 22%); /* 미묘한 입력 */
+  --ring: #6366f1; /* 브랜드 프라이머리 링 (밝은 인디고) */
+
+  /* Charts */
+  --chart-1: hsl(211 100% 60%); /* 밝은 블루 */
+  --chart-2: hsl(151 85% 50%); /* 밝은 그린 */
+  --chart-3: hsl(48 100% 60%); /* 밝은 옐로우 */
+  --chart-4: hsl(28 100% 60%); /* 밝은 오렌지 */
+  --chart-5: hsl(0 84% 65%); /* 밝은 레드 */
+}
+
+/* ============================================ */
+/* Group-D 브랜드 색상 (프로젝트 전용)         */
+/* ============================================ */
+:root {
+  /* 브랜드 프라이머리 - 인디고 */
+  --brand-primary: #5056dc;
+  --brand-primary-foreground: #ffffff;
+
+  /* 브랜드 세컨더리 - 청록색 (조화로운 색상) */
+  --brand-secondary: #06b6d4; /* Cyan 500 - 모던하고 신선한 느낌 */
+  --brand-secondary-foreground: #ffffff;
+
+  /* 브랜드 액센트 - 밝은 보라 (강조용) */
+  --brand-accent: #9a7ef9;
+  --brand-accent-foreground: #ffffff;
+}
+
+.dark {
+  /* 다크 모드에서는 약간 밝게 */
+  --brand-primary: #6366f1; /* 조금 더 밝은 인디고 */
+  --brand-primary-foreground: #ffffff;
+
+  --brand-secondary: #22d3ee; /* 밝은 청록색 */
+  --brand-secondary-foreground: #0c1015;
+
+  --brand-accent: #a78bfa; /* 밝은 보라 */
+  --brand-accent-foreground: #0c1015;
+}
+
+/* ============================================ */
+/* Tailwind v4 테마 매핑 (shadcn/ui 기본)      */
+/* ============================================ */
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Border Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* ============================================ */
+/* Tailwind v4 테마 매핑 (Group-D 브랜드)      */
+/* ============================================ */
+@theme inline {
+  /* 브랜드 색상 */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-foreground: var(--brand-primary-foreground);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-secondary-foreground: var(--brand-secondary-foreground);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-foreground: var(--brand-accent-foreground);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      sans-serif;
+  }
+}
+
+.debug {
+  border-width: 1px;
+  border-color: #ef4444;
+  border-style: dashed;
+}
+
+* {
+  @apply tracking-tight select-none;
+}
+
+span {
+  @apply cursor-default;
+}
+
+/* ============================================ */
+/* 테마 전환 애니메이션 (Apple 스타일)          */
+/* ============================================ */
+.theme-transitioning {
+  animation: themeTransition 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes themeTransition {
+  0% {
+    filter: brightness(1) blur(0px);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(0.95) blur(2px);
+    transform: scale(0.995);
+  }
+  100% {
+    filter: brightness(1) blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* 테마 전환 중 요소들의 transition 비활성화 (깜빡임 방지) */
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: none !important;
+}
+
+/* ============================================ */
+/* 페이지 전환 애니메이션                        */
+/* ============================================ */
+.page-transitioning {
+  animation: pageTransition 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pageTransition {
+  0% {
+    filter: brightness(1) blur(0px);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(0.95) blur(2px);
+    transform: scale(0.995);
+  }
+  100% {
+    filter: brightness(1) blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* 테이블 내의 span만 선택 가능 */
+table > tbody span,
+table > tbody p {
+  @apply select-text;
+}
+
+/* ============================================ */
+/* 커스텀 애니메이션: 중간 기준 위아래 바운스      */
+/* ============================================ */
+@keyframes bounce-center {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* 기본 상태: 애니메이션 없음 */
+.animate-bounce-center {
+  animation: none;
+}
+
+/* Button에 group 클래스가 있고 hover 시 내부의 animate-bounce-center 활성화 */
+button.group:hover .animate-bounce-center,
+button.group:hover > * .animate-bounce-center,
+.group:hover .animate-bounce-center {
+  animation: bounce-center 0.6s ease-in-out infinite;
+}
+
+/* ============================================ */
+/* 로딩 화면 애니메이션                          */
+/* ============================================ */
+
+/* 아래에서 올라오면서 페이드인 */
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 페이드인 */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* 점 바운스 애니메이션 (순차적) */
+@keyframes bounce-dot {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-dot-1 {
+  animation: bounce-dot 1.4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.animate-bounce-dot-2 {
+  animation: bounce-dot 1.4s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.animate-bounce-dot-3 {
+  animation: bounce-dot 1.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+/* 프로그레스 바 무한 애니메이션 */
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.animate-progress-indeterminate {
+  animation: progress-indeterminate 1.5s ease-in-out infinite;
+}
